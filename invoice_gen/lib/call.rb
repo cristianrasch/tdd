@@ -8,16 +8,4 @@ class Call
   def price
     0
   end
-  
-  def local?
-    is_a? LocalCall
-  end
-  
-  def long_distance?
-    is_a? LongDistanceCall
-  end
-  
-  def international?
-    is_a? InternationalCall
-  end
 end
