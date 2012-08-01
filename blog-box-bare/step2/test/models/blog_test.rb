@@ -19,17 +19,17 @@ class BlogTest < MiniTest::Unit::TestCase
     refute_nil posts.find { |post| post.filename == "my-second-blog-post.html" }
   end
   
-  def test_public_directory_exists
-    assert Dir.exists?(@blog.public_directory)
-  end
-  
-  def test_turns_md_posts_into_html_articles
-    @blog.publish_all_posts
-    
-    ["my-first-blog-post", "my-second-blog-post"].each do |post|
-      html_article = File.join(@blog.public_directory, "#{post}.html")
-      assert File.exists?(html_article)
-    end
-    FileUtils.rm_rf @blog.public_directory
-  end
+  #def test_public_directory_exists
+  #  assert Dir.exists?(@blog.public_directory)
+  #end
+  #
+  #def test_turns_md_posts_into_html_articles
+  #  @blog.publish_all_posts
+  #  
+  #  ["my-first-blog-post", "my-second-blog-post"].each do |post|
+  #    html_article = File.join(@blog.public_directory, "#{post}.html")
+  #    assert File.exists?(html_article)
+  #  end
+  #  FileUtils.rm_rf @blog.public_directory
+  #end
 end
